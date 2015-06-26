@@ -3,3 +3,17 @@
 <p>This is where you build your own library for others to see, and for you to see what others are recommending for you to try week to week.</p>
 
 <p>Found a great movie? Let others know!</p>
+
+<% @posts.each do |post| %>
+  <div class="well">
+    <h4><%= post.title %></h4>
+    <p><em><%= post.description %></em></p>
+    <p>
+    <span class="quiet">posted by </span> <%= link_to post.user.user_name %>
+    <small>at <%= display_datetime(post.created_at) %></small>
+    </p>
+    <span>
+      <%= link_to("#{post.comments.size} comments", post_path(post)) %>
+    </span>
+  </div>
+<% end %>

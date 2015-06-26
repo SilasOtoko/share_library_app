@@ -1,0 +1,11 @@
+<%= @post.title %>
+<%= @post.description %>
+<% @post.comments.each do |comment| %>
+  <div class="well">
+    <%= comment.body %>
+    <p>
+      <span class="quiet">posted by </span> <%= link_to comment.user.user_name %>
+      <small>at <%= display_datetime(comment.created_at) %></small>
+    </p>
+  </div>
+<% end %>
