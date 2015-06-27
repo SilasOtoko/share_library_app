@@ -1,10 +1,21 @@
-<%= @post.title %>
-<%= @post.description %>
+
+<h3><%= @post.title %></h3>
+<p><%= @post.description %></p>
+
+<%= form_for [@post, @comment] do |f| %>
+  <div class='control-group'>
+    <%= f.label :body, "Leave a Comment" %>
+    <%= f.text_area :body, rows: 3, class: 'span4' %>
+  </div>
+  <%= f.submit "Create Comment", class: "btn btn-primary" %>
+<% end %>
+
 <% @post.comments.each do |comment| %>
   <div class="well">
     <%= comment.body %>
     <p>
       <span class="quiet">posted by </span> <%= link_to comment.user.user_name %>
+      of the <%= comment.user.family.family_name %> clan
       <small>at <%= display_datetime(comment.created_at) %></small>
     </p>
   </div>

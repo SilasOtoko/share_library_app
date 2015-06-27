@@ -6,10 +6,12 @@
 
 <% @posts.each do |post| %>
   <div class="well">
+    <%= render post.categories %>
     <h4><%= post.title %></h4>
     <p><em><%= post.description %></em></p>
     <p>
     <span class="quiet">posted by </span> <%= link_to post.user.user_name %>
+    of the <%= post.user.family.family_name %> clan
     <small>at <%= display_datetime(post.created_at) %></small>
     </p>
     <span>
@@ -17,3 +19,5 @@
     </span>
   </div>
 <% end %>
+
+<%= link_to 'New Post', new_post_path, class: 'btn btn-success btn-small' %>
