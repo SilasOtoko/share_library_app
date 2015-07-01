@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :edit, :update]
+  before_action :set_post, only: [:show, :edit, :update, :vote]
   before_action :require_user, except: [:show, :index]
 
   def index
@@ -15,7 +15,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(params.require(:post).permit!)
+    @post = Post.new(post_params)
     @post.user = current_user
 
     if @post.save
@@ -30,7 +30,7 @@ class PostsController < ApplicationController
   end
 
   def update
-    if @post.update(params.require(:post).permit!)
+    if @post.update(post_params)
       flash[:notice] = "The post was update"
       redirect_to posts_path
     else
@@ -38,7 +38,23 @@ class PostsController < ApplicationController
     end
   end
 
+  def vote
+    @vote = Vote.create(voteable: @post, user: current_user, vote: params[:vote])
+  
+    if @vote.valid?
+      flash[:notice] = "You voted successfully."
+    else
+      flash[:error] = "You've already voted on this'"
+    end
+
+    redirect_to :back
+  end
+
   private
+
+  def post_params
+    params.require(:post).permit!
+  end
 
   def set_post
     @post = Post.find(params[:id])
