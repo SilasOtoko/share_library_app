@@ -7,7 +7,9 @@
 <p>
   <%= render @post.categories %>
 </p>
-<h3><%= @post.title %></h3>
+
+<%= render 'shared/content_title', title: @post.title %>
+
 <p><%= @post.description %></p>
 
 <% if logged_in? %>
@@ -24,12 +26,5 @@
 <p>Comments:</p>
 
 <% @post.comments.each do |comment| %>
-  <div class="well">
-    <%= comment.body %>
-    <p>
-      <span class="quiet">posted by </span> <%= link_to comment.user.user_name %>
-      of the <%= comment.user.family.family_name %> clan
-      <small>at <%= display_datetime(comment.created_at) %></small>
-    </p>
-  </div>
+  <%= render 'comments/comment', comment: comment %>
 <% end %>

@@ -1,4 +1,4 @@
-<h3>Welcome!</h3>
+<%= render 'shared/content_title', title: "Recommended by Others" %>
 
 <p>This is where you build your own library for others to see, and for you to see what others are recommending for you to try week to week.</p>
 
@@ -13,30 +13,5 @@
 </p>
 
 <% @posts.each do |post| %>
-  <div class="row">
-    <div class='span0 well text-center'>
-      <%= link_to vote_post_path(post, vote: true), method: 'post' do %>
-        <i class='icon-arrow-up'></i>
-      <% end %>
-      <br/>
-      <%= post.total_votes %>
-      <br/>
-      <%= link_to vote_post_path(post, vote: false), method: 'post' do %>
-        <i class='icon-arrow-down'></i>
-      <% end %>
-    </div>
-    <div class="span8 well">
-      <%= render post.categories %>
-      <h4><%= post.title %></h4>
-      <p><em><%= post.description %></em></p>
-      <p>
-      <span class="quiet">posted by </span> <%= link_to post.user.user_name %>
-      of the <%= post.user.family.family_name %> clan
-      <small>at <%= display_datetime(post.created_at) %></small>
-      </p>
-      <span>
-        <%= link_to("#{post.comments.size} comments", post_path(post)) %>
-      </span>
-    </div>
-  </div>
+  <%= render 'post', post: post %>
 <% end %>
