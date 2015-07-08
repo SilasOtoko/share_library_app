@@ -40,14 +40,18 @@ class PostsController < ApplicationController
 
   def vote
     @vote = Vote.create(voteable: @post, user: current_user, vote: params[:vote])
-  
-    if @vote.valid?
-      flash[:notice] = "You voted successfully."
-    else
-      flash[:error] = "You've already voted on this'"
+    
+    respond_to do |format|
+      format.html do
+        if @vote.valid?
+          flash[:notice] = "You voted successfully."
+        else
+          flash[:error] = "You've already voted on this"
+        end
+        redirect_to :back
+      end
+      format.js
     end
-
-    redirect_to :back
   end
 
   private
