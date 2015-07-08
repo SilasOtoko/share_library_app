@@ -6,7 +6,7 @@
         <% end %>
         <br/>
       <% end %>
-      <span id="post_<%= post.id %>_votes"><%= post.total_votes %> votes</span>
+      <span id="post_<%= post.slug %>_votes"><%= post.total_votes %> votes</span>
       <% if logged_in? %>
         <br/>
         <%= link_to vote_post_path(post, vote: false), method: 'post', remote: true do %>
@@ -19,7 +19,7 @@
       <h4><%= post.title %></h4>
       <p><em><%= post.description %></em></p>
       <p>
-      <span class="quiet">posted by </span> <%= link_to post.user.user_name %>
+      <span class="quiet">posted by </span> <%= link_to post.user.user_name, user_path(post.user) %>
       of the <%= post.user.family.family_name %> clan
       <small>at <%= display_datetime(post.created_at) %></small>
       </p>
