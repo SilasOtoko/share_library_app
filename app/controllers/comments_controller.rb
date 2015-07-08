@@ -1,10 +1,11 @@
 class CommentsController < ApplicationController
   before_action :require_user
+  before_action :require_creator, only: [:edit, :update]
 
   def create
-    @post = Post.find(params[:post_id])
+    @post = Post.find_by slug: params[:post_id]
     @comment = @post.comments.build(params.require(:comment).permit(:body))
-    @comment.user = current_user
+    @comment.creator = current_user
     @post.comments.reload
 
     if @comment.save
@@ -29,5 +30,9 @@ class CommentsController < ApplicationController
       end
       format.js
     end
+  end
+
+  def require_creator
+    access_denied unless logged_in? and (current_user == @comment.creator || current_user.admin?)
   end
 end
