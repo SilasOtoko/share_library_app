@@ -1,0 +1,44 @@
+body{
+  background-color: #f9f9f9;
+}
+
+h1{
+  margin: 0;
+}
+
+#side-bar{
+  width: 300px;
+  float: left;
+  background-color: #333;
+  padding-top: 100px;
+}
+
+#menu-list{
+  padding-left: 20%;
+}
+
+.no-list-style{
+  list-style: none;
+  margin-left: 0;
+}
+
+.menu-items{
+  margin: 10px 0;
+}
+
+#canvas{
+  border-left: 300px solid #333;
+  padding-top: 100px;
+}
+
+header{
+  height: 50px;
+  padding: 25px;
+  border-left: 300px solid #333;
+  background-color: #4D7BA8;
+}
+
+#feed{
+  width: 80%;
+  margin: 0 auto;
+}
