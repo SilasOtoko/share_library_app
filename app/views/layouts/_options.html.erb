@@ -1,3 +1,4 @@
+<% if logged_in? %>
 <div class='btn-group pull-right'>
   <%= link_to('', class: 'btn btn-small dropdown-toggle', 'data-toggle' => 'dropdown') do %>
       <%= current_user.user_name %>
@@ -24,3 +25,4 @@
       </li>
     </ul>
   </div>
+<% end %>
