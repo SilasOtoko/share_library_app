@@ -52,7 +52,8 @@ header{
 }
 
 #feed{
-  width: 60%;
+  width: 80%;
+  max-width: 940px;
   margin: 0 auto;
 }
 

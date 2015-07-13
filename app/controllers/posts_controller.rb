@@ -6,6 +6,7 @@ class PostsController < ApplicationController
   def index
     @posts = Post.limit(Post::PER_PAGE).offset(params[:offset])
     @pages = (Post.all.size.to_f / Post::PER_PAGE).ceil
+    @this_week = Post.limit(Post::PER_PAGE).offset(params[:offset]).where(created_at: (Time.now.midnight - 7.day)..Time.now.midnight)
   end
 
   def show
@@ -68,5 +69,8 @@ class PostsController < ApplicationController
 
   def require_creator
     access_denied unless logged_in? and (current_user == @post.creator || current_user.admin?)
+  end
+
+  def time_period
   end
 end
