@@ -6,39 +6,56 @@ h1{
   margin: 0;
 }
 
-#side-bar{
-  width: 300px;
-  float: left;
+header{
   background-color: #333;
-  padding-top: 100px;
+  padding: 0 50px 0 0;
+  clear: both;
 }
 
-#menu-list{
-  padding-left: 20%;
-}
-
-.no-list-style{
-  list-style: none;
-  margin-left: 0;
+#navigation-list{
+  text-align: right;
+  margin: 0;
 }
 
 .menu-items{
-  margin: 10px 0;
+  display: inline-block;
+  padding: 20px 0;
+  margin: 0;
+}
+
+.menu-items a{
+  color: white;
+  text-decoration: none;
+  padding: 20px;
+  margin: 0;
+}
+
+.menu-items:hover{
+  background-color: #ccc;
+}
+
+.green{
+  background-color: #19A319;
+}
+
+.green:hover{
+  background-color: #8CD18C
+}
+
+.dropdown-menu{
+  text-align: left;
 }
 
 #canvas{
-  border-left: 300px solid #333;
   padding-top: 100px;
-}
-
-header{
-  height: 50px;
-  padding: 25px;
-  border-left: 300px solid #333;
-  background-color: #4D7BA8;
+  clear: both;
 }
 
 #feed{
-  width: 80%;
+  width: 60%;
   margin: 0 auto;
+}
+
+#new-post{
+  margin: 40px 0;
 }

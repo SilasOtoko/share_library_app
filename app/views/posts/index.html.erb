@@ -4,13 +4,11 @@
 
 <p>Found a great movie? Let others know!</p>
 
-<p>
 <% if logged_in? %>
-  <div>
+  <div id="new-post">
     <%= link_to 'New Post', new_post_path, class: 'btn btn-success btn-small' %>
   </div>
 <% end %>
-</p>
 
 <% @posts.each do |post| %>
   <%= render 'post', post: post %>

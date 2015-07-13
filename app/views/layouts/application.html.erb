@@ -12,13 +12,10 @@
     <%= yield(:head) %>
   </head>
   <body>
-    <div id="side-bar">
-      <div id="menu-list">
-        <%= render 'layouts/menu' %>
-      </div>
-    </div>
     <header>
-      <%= render 'layouts/options' %>
+      <div id="navigation">
+        <%= render 'layouts/navigation' %>
+      </div>
     </header>
     <div id="canvas">
         <div id="feed">
