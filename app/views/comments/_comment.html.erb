@@ -20,7 +20,6 @@
       <%= comment.body %>
       <p>
         <span class="quiet">posted by </span> <%= link_to comment.creator.user_name, user_path(comment.creator) %>
-        of the <%= comment.creator.family.family_name %> clan
         <small>at <%= display_datetime(comment.created_at) %></small>
       </p>
     </div>
