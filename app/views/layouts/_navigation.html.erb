@@ -1,7 +1,30 @@
 <ul id="navigation-list">
-    <li class='menu-items'>
-      <%= link_to "Home", root_path %>
-    </li>
+  <li class='menu-items'>
+    <div class='btn-group'>
+      <%= link_to '#', class: 'btn dropdown-toggle', 'data-toggle' => 'dropdown' do %>
+        Categories <span class='caret'></span>
+      <% end %>
+      <ul class='dropdown-menu'>
+        <% Category.all.each do |category| %>
+          <li>
+            <%= link_to category.name, category_path(category) %>
+          </li>
+        <% end %>
+        <% if logged_in? and current_user.admin? %>
+        <li class='divider'></li>
+        <li>
+          <%= link_to(new_category_path) do %>
+            <i class="icon-plus"></i>
+            New Category
+          <% end %>
+        </li>
+        <% end %>
+      </ul>
+    </div>
+  </li>
+  <li class='menu-items'>
+    <%= link_to "Home", root_path %>
+  </li>
   <% if logged_in? %>
     <li class='menu-items'>
       <%= link_to 'My Library', user_path(current_user) %>
