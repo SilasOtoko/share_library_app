@@ -20,7 +20,6 @@
       <p><em><%= post.description %></em></p>
       <p>
       <span class="quiet">posted by </span> <%= link_to post.creator.user_name, user_path(post.creator) %>
-      of the <%= post.creator.family.family_name %> clan
       <small>at <%= display_datetime(post.created_at) %></small>
       </p>
       <span>
