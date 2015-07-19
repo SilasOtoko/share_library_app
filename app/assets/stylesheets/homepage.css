@@ -1,0 +1,41 @@
+#title-background{
+  margin: 0 auto;
+  width: 80%;
+  background-color: #76a5af;
+  border-radius: 10px;
+  padding: 100px 20px 60px;
+}
+
+#app-title{
+  text-align: center;
+  color: #f9f9f9;
+  font-size: 5em;
+  margin-bottom: 50px;
+}
+
+#buttons{
+  padding: 0;
+  margin: 0 auto;
+  list-style: none;
+  width: 90%;
+  text-align: center;
+}
+
+.button{
+  display: inline-block;
+}
+
+.button a{
+  color: white;
+  padding: 10px;
+  background-color: #333;
+  width: 100px;
+  border-radius: 10px;
+  display: inline-block;
+  margin: 20px;
+}
+
+.button a:hover{
+  text-decoration: none;
+  background-color: #ccc;
+}

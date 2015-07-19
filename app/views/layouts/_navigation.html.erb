@@ -1,5 +1,8 @@
 <ul id="navigation-list">
-  <li class='menu-items'>
+  <li id='app-name' class='menu-items navigation-link pull-left'>
+    <%= link_to 'Library App', root_path %>
+  </li>
+<!--   <li class='menu-items'>
     <div class='btn-group'>
       <%= link_to '#', class: 'btn dropdown-toggle', 'data-toggle' => 'dropdown' do %>
         Categories <span class='caret'></span>
@@ -21,12 +24,12 @@
         <% end %>
       </ul>
     </div>
-  </li>
-  <li class='menu-items'>
+  </li> -->
+  <li class='menu-items navigation-link menu-item'>
     <%= link_to "Home", root_path %>
   </li>
   <% if logged_in? %>
-    <li class='menu-items'>
+    <li class='menu-items navigation-link menu-item'>
       <%= link_to 'My Library', user_path(current_user) %>
     </li>
     <div class='btn-group'>
@@ -56,11 +59,5 @@
     </ul>
   </div>
   <% else %>
-    <li class='menu-items'>
-      <%= link_to 'Register', register_path %>
-    </li>
-    <li class='menu-items green'>
-      <%= link_to 'Log in', login_path %>
-    </li>
 </ul>
   <% end %>

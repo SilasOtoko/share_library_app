@@ -12,6 +12,12 @@ header{
   clear: both;
 }
 
+#app-name{
+  font-size: 2em;
+  font-weight: bold;
+  padding: 20px;
+}
+
 #navigation-list{
   text-align: right;
   margin: 0;
@@ -23,14 +29,18 @@ header{
   margin: 0;
 }
 
-.menu-items a{
+.navigation-link a{
   color: white;
   text-decoration: none;
-  padding: 20px;
   margin: 0;
 }
 
-.menu-items:hover{
+.menu-item{
+  padding: 20px;
+  font-size: 1.4em;
+}
+
+.menu-item:hover{
   background-color: #ccc;
 }
 
@@ -44,19 +54,4 @@ header{
 
 .dropdown-menu{
   text-align: left;
-}
-
-#canvas{
-  padding-top: 100px;
-  clear: both;
-}
-
-#feed{
-  width: 80%;
-  max-width: 940px;
-  margin: 0 auto;
-}
-
-#new-post{
-  margin: 40px 0;
 }

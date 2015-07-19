@@ -4,9 +4,16 @@ class PostsController < ApplicationController
   before_action :require_creator, only: [:edit, :update]
 
   def index
-    @posts = Post.limit(Post::PER_PAGE).offset(params[:offset])
-    @pages = (Post.all.size.to_f / Post::PER_PAGE).ceil
-    @this_week = Post.limit(Post::PER_PAGE).offset(params[:offset]).where(created_at: (Time.now.midnight - 7.day)..Time.now.midnight)
+    if logged_in?
+      @posts = Post.limit(Post::PER_PAGE).offset(params[:offset])
+      @pages = (Post.all.size.to_f / Post::PER_PAGE).ceil
+      @this_week = Post.limit(Post::PER_PAGE).offset(params[:offset]).where(created_at: (Time.now.midnight - 7.day)..Time.now.midnight)
+    else
+      render 'home'
+    end
+  end
+
+  def home
   end
 
   def show

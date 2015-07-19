@@ -1,23 +1,27 @@
-<%= render 'shared/content_title', title: "Recommended by Others" %>
+<%= render 'layouts/side_bar' %>
 
-<p>This is where you build your own library for others to see, and for you to see what others are recommending for you to try week to week.</p>
+<div id="feed">
+  <%= render 'shared/content_title', title: "Recommended by Others" %>
 
-<p>Found a great movie? Let others know!</p>
+  <p>This is where you build your own library for others to see, and for you to see what others are recommending for you to try week to week.</p>
 
-<% if logged_in? %>
-  <div id="new-post">
-    <%= link_to 'New Post', new_post_path, class: 'btn btn-success btn-small' %>
-  </div>
-<% end %>
+  <p>Found a great movie? Let others know!</p>
 
-<% @posts.each do |post| %>
-  <%= render 'post', post: post %>
-<% end %>
-
-<% @pages.times do |n| %>
-  <% if (params[:offset].nil? && n == 0) || params[:offset].to_s == (n * Post::PER_PAGE).to_s %>
-    <%= "| Page #{n + 1}" %>
-  <% else %>
-    <%= link_to "| Page #{n + 1}", posts_path(offset: n * Post::PER_PAGE) %>
+  <% if logged_in? %>
+    <div id="new-post">
+      <%= link_to 'New Post', new_post_path, class: 'btn btn-success btn-small' %>
+    </div>
   <% end %>
-<% end %>
+
+  <% @posts.each do |post| %>
+    <%= render 'post', post: post %>
+  <% end %>
+
+  <% @pages.times do |n| %>
+    <% if (params[:offset].nil? && n == 0) || params[:offset].to_s == (n * Post::PER_PAGE).to_s %>
+      <%= "| Page #{n + 1}" %>
+    <% else %>
+      <%= link_to "| Page #{n + 1}", posts_path(offset: n * Post::PER_PAGE) %>
+    <% end %>
+  <% end %>
+</div>

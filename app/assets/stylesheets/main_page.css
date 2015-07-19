@@ -1,0 +1,18 @@
+#canvas{
+  padding-top: 100px;
+  clear: both;
+}
+
+#main-content{
+  width: 80%;
+  max-width: 940px;
+  margin: 0 auto;
+}
+
+#feed{
+  width: 100%;
+}
+
+#new-post{
+  margin: 40px 0;
+}
