@@ -1,17 +1,16 @@
-<%= render 'layouts/side_bar' %>
-
-<div id="feed">
-  <%= render 'shared/content_title', title: "Recommended by Others" %>
-
-  <p>This is where you build your own library for others to see, and for you to see what others are recommending for you to try week to week.</p>
-
-  <p>Found a great movie? Let others know!</p>
-
-  <% if logged_in? %>
-    <div id="new-post">
+<h1>All Posts</h1>
+<br/>
+<% if logged_in? %>
+    <div id="new-post pull-right">
       <%= link_to 'New Post', new_post_path, class: 'btn btn-success btn-small' %>
     </div>
   <% end %>
+<br/>
+
+
+<%= render 'layouts/side_bar' %>
+
+<div id="feed">
 
   <% @posts.each do |post| %>
     <%= render 'post', post: post %>

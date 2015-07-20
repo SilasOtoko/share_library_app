@@ -1,6 +1,15 @@
-<% header = link_to("All Posts", posts_path) + " &raquo; #{@category.name}".html_safe %>
+<h1><%= header = link_to("All Posts", posts_path) + " &raquo; #{@category.name}".html_safe %></h1>
+<br/>
+<% if logged_in? %>
+    <div id="new-post pull-right">
+      <%= link_to 'New Post', new_post_path, class: 'btn btn-success btn-small' %>
+    </div>
+  <% end %>
+<br/>
 
 <% render 'shared/content_title', title: header %>
+
+<%= render 'layouts/side_bar' %>
 
 <% @category.posts.each do |post| %>
   <%= render 'posts/post', post: post %>

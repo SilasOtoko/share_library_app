@@ -4,18 +4,39 @@
   float: left;
   position: fixed;
   left: 0;
-  background: #ccc;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
   list-style: none;
 }
 
 .category{
-  padding: 10px;
+  padding: 20px 0;
   text-align: center;
-  
+  background: #ccc;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  margin: 10px 0;
+  border: 2px solid #777;
+  border-left: none;
 }
 
 .category:hover{
   background-color: #eee;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.category-link{
+  padding: 20px;
+  color: black;
+  text-decoration: none;
+}
+
+.category-link:hover{
+  text-decoration: none;
+  color: black;
+}
+
+.selected{
+  border: 2px solid #333;
 }

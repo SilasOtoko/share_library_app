@@ -1,5 +1,16 @@
-<ul id="side-bar">
-  <li class='category'>
+<div class='tabbable'
+  <ul id="side-bar" class='nav nav-pills nav-stacked col-md-3'>
+    <li class='category'>
+        <%= link_to 'All', posts_path, class: 'category-link' %>
+      </li>
+    <% Category.all.each do |category| %>
+      <li class='category'>
+        <%= link_to category.name, category_path(category), class: 'category-link' %>
+      </li>
+    <% end %>
+  </ul>
+</div>
+  <!-- <li class='category'>
     <i class="fa fa-folder-open fa-3x"></i>
     <br/>
     All
@@ -33,5 +44,4 @@
     <i class="fa fa-cutlery fa-3x"></i>
     <br/>
     Food
-  </li>
-</ul>
+  </li> -->
