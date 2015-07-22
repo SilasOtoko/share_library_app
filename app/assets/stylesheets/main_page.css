@@ -4,15 +4,16 @@
 }
 
 #main-content{
-  width: 80%;
+  width: 90%;
   max-width: 940px;
   margin: 0 auto;
+  color: #333;
 }
 
 #feed{
   width: 100%;
 }
 
-#new-post{
-  margin: 40px 0;
+.row{
+  margin-left: 0;
 }

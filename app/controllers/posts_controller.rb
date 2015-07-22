@@ -7,7 +7,7 @@ class PostsController < ApplicationController
     if logged_in?
       @posts = Post.limit(Post::PER_PAGE).offset(params[:offset])
       @pages = (Post.all.size.to_f / Post::PER_PAGE).ceil
-      @this_week = Post.limit(Post::PER_PAGE).offset(params[:offset]).where(created_at: (Time.now.midnight - 7.day)..Time.now.midnight)
+      @posts_this_month = Post.limit(Post::PER_PAGE).offset(params[:offset]).where(created_at: (Time.now.midnight - 30.day)..Time.now.midnight)
     else
       render 'home'
     end
@@ -18,6 +18,7 @@ class PostsController < ApplicationController
 
   def show
     @comment = Comment.new
+    @category = Category.find_by slug: params[:id]
   end
 
   def new

@@ -6,6 +6,8 @@ PostitTemplate::Application.routes.draw do
   post '/login', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'
   get '/home', to: 'posts#home'
+  get '/library', to: 'users#library'
+
 
   resources :posts do
     member do

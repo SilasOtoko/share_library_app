@@ -1,7 +1,7 @@
 <% show_post ||= false %>
 
 <div class="row">
-    <div class='span0 well text-center'>
+    <div class='vote-box text-center'>
       <% if logged_in? %>
         <%= link_to vote_post_comment_path(comment.post, comment, vote: true), method: 'post', remote: true do %>
           <i class='icon-arrow-up'></i>
@@ -16,7 +16,7 @@
         <% end %>
       <% end %>
     </div>
-    <div class="span8 well">
+    <div class="comments">
       <%= comment.body %>
       <p>
         <span class="quiet">posted by </span> <%= link_to comment.creator.user_name, user_path(comment.creator) %>

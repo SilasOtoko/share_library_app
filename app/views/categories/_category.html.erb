@@ -1,2 +1,42 @@
-<span class="badge"><%= link_to category.name, category_path(category) %></span>
+<div class="categories">
+  <%= link_to category_path(category) do %>
+    <% if category.name == 'Books' %>
+      <div class='category-icon' id="books">
+        <i class='fa fa-book fa-2x'></i>
+        <%= category.name %>
+      </div>
+    <% end %>
+    <% if category.name == 'Movies' %>
+      <div class='category-icon' id="movies">
+        <i class="fa fa-film fa-2x"></i>
+        <%= category.name %>
+      </div>
+    <% end %>
+    <% if category.name == 'Shows' %>
+      <div class='category-icon' id="shows">
+        <i class="fa fa-desktop fa-2x"></i>
+        <%= category.name %>
+      </div>
+    <% end %>
+    <% if category.name == 'Games' %>
+      <div class='category-icon' id="games">
+        <i class="fa fa-gamepad fa-2x"></i>
+        <%= category.name %>
+      </div>
+    <% end %>
+    <% if category.name == 'Food' %>
+      <div class='category-icon' id="food">
+        <i class="fa fa-cutlery fa-2x"></i>
+        <%= category.name %>
+      </div>
+    <% end %>
+    <% if category.name == 'Music' %>
+      <div class='category-icon' id="music">
+        <i class="fa fa-headphones fa-2x"></i>
+        <%= category.name %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
 

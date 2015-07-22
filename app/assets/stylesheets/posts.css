@@ -1,0 +1,120 @@
+#posts-header{
+  display: inline-block;
+  float: left;
+  margin-bottom: 20px;
+}
+
+#new-post{
+  display: inline-block;
+  float: right;
+  margin: 40px 0;
+}
+
+.post-section{
+  clear: both;
+  margin: 20px 0;
+}
+
+.vote-box{
+  display: inline-block;
+  background-color: #f9f9f9;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: 2px solid #333;
+  float: left;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.post,
+.comments{
+  display: inline-block;
+  width: 80%;
+  background-color: #f9f9f9;
+  border: 2px solid #333;
+  border-radius: 10px;
+  float: right;
+  padding: 20px;
+}
+
+.category-icon{
+  height: 50px;
+  width: 50px;
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid #333;
+  margin: -22px 20px 20px -22px;
+  display: inline-block;
+  text-align: center;
+}
+
+.categories{
+  display: inline-block;
+  vertical-align: top;
+}
+
+.categories a{
+  text-decoration: none;
+  text-align: center;
+  color: #f9f9f9;
+}
+
+.post-info{
+  display: inline-block;
+  margin-left: 20px;
+  width: 80%;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.post-info h4{
+  font-size: 1.4em;
+  font-family: 'Alegreya', serif;
+}
+
+#books{
+  background-color: #597eaa;
+}
+
+#movies{
+  background-color: #cf2a27;
+}
+
+#shows{
+  background-color: #e69138;
+}
+
+#games{
+  background-color: #6aa84f;
+}
+
+#food{
+  background-color: #f1c232;
+}
+
+#music{
+  background-color: #674ea7;
+}
+
+.comments{
+  margin: 0 0 20px;
+}
+
+.user-info{
+  border: 2px solid #333;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.show-post{
+  display: inline-block;
+  width: 100%;
+  background-color: #f9f9f9;
+  border: 2px solid #333;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+#leave-comment{
+  margin: 20px 0;
+}

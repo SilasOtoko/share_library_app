@@ -10,13 +10,13 @@
 }
 
 .category{
-  padding: 20px 0;
+  padding: 20px;
   text-align: center;
-  background: #ccc;
+  background: #f9f9f9;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
   margin: 10px 0;
-  border: 2px solid #777;
+  border: 2px solid #333;
   border-left: none;
 }
 
@@ -27,7 +27,7 @@
 }
 
 .category-link{
-  padding: 20px;
+  margin: 20px 0;
   color: black;
   text-decoration: none;
 }
