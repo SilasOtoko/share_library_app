@@ -1,4 +1,4 @@
-<h1 id="posts-header">Recommended this Month</h1>
+<h1 id="posts-header">All Posts</h1>
 <% if logged_in? %>
   <%= link_to 'New Post', new_post_path, class: 'btn btn-success btn-large new-post pull-right' %>
 <% end %>
@@ -9,7 +9,7 @@
 
 <div id="feed">
 
-  <% @posts_this_month.each do |post| %>
+  <% @posts.each do |post| %>
     <%= render 'post', post: post %>
   <% end %>
 
