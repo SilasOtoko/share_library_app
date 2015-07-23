@@ -1,10 +1,10 @@
+
+
 <h1 id="posts-header">All Posts</h1>
 <% if logged_in? %>
   <%= link_to 'New Post', new_post_path, class: 'btn btn-success btn-large new-post pull-right' %>
 <% end %>
 <br/>
-
-
 <%= render 'layouts/side_bar' %>
 
 <div id="feed">

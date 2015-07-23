@@ -1,34 +1,35 @@
-<div class='tabbable'
-  <ul id="side-bar" class='nav nav-pills nav-stacked col-md-3'>
-    <%= link_to posts_path, class: 'category-link' do %>
+<ul id="side-bar">
+  <%= link_to posts_path, class: 'category-link' do %>
+    <li class='category' id='category-all'>
+      <i class='fa fa-archive fa-2x'></i>
+      <br/>
+      All
+    </li>
+  <% end %>
+  
+  <% Category.all.each do |category| %>
+    <%= link_to category_path(category), class: 'category-link' do %>
       <li class='category'>
-        All
+        <% if category.name == 'Books' %>
+          <i class='fa fa-book fa-2x'></i>
+        <% elsif category.name == 'Movies' %>
+          <i class="fa fa-film fa-2x"></i>
+        <% elsif category.name == 'Shows' %>
+          <i class="fa fa-desktop fa-2x"></i>
+        <% elsif category.name == 'Games' %>
+          <i class="fa fa-gamepad fa-2x"></i>
+        <% elsif category.name == 'Food' %>
+          <i class="fa fa-cutlery fa-2x"></i>
+        <% elsif category.name == 'Music' %>
+          <i class="fa fa-headphones fa-2x"></i>
+        <% end %>
+        <br/>
+        <%= category.name %>
       </li>
     <% end %>
-    
-    <% Category.all.each do |category| %>
-      <%= link_to category_path(category), class: 'category-link' do %>
-        <li class='category'>
-          <% if category.name == 'Books' %>
-            <i class='fa fa-book fa-2x'></i>
-          <% elsif category.name == 'Movies' %>
-            <i class="fa fa-film fa-2x"></i>
-          <% elsif category.name == 'Shows' %>
-            <i class="fa fa-desktop fa-2x"></i>
-          <% elsif category.name == 'Games' %>
-            <i class="fa fa-gamepad fa-2x"></i>
-          <% elsif category.name == 'Food' %>
-            <i class="fa fa-cutlery fa-2x"></i>
-          <% elsif category.name == 'Music' %>
-            <i class="fa fa-headphones fa-2x"></i>
-          <% end %>
-          <br/>
-          <%= category.name %>
-        </li>
-      <% end %>
-    <% end %>
-  </ul>
-</div>
+  <% end %>
+</ul>
+
   <!-- <li class='category'>
     <i class="fa fa-folder-open fa-3x"></i>
     <br/>
