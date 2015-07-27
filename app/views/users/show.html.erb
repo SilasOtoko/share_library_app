@@ -34,8 +34,4 @@
   <% @user.comments.each do |comment| %>
     <%= render 'comments/comment', comment: comment, show_post: true %>
   <% end %>
-<% elsif params[:tab] == 'books' %>
-  <% @user.posts.each do |post| %>
-      <%= render 'posts/post', post: post %>
-  <% end %>
 <% end %>

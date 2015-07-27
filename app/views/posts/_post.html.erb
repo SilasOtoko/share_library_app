@@ -1,34 +1,32 @@
-<div class="post-section">
-<div class="row">
-    <div class='vote-box text-center'>
-      <% if logged_in? %>
-        <%= link_to vote_post_path(post, vote: true), method: 'post', remote: true do %>
-          <i class='icon-arrow-up'></i>
-        <% end %>
-        <br/>
+<div class="post-section cf">
+  <div class='vote-box text-center'>
+    <% if logged_in? %>
+      <%= link_to vote_post_path(post, vote: true), method: 'post', remote: true do %>
+        <i class='icon-arrow-up'></i>
       <% end %>
-      <span id="post_<%= post.slug %>_votes"><%= post.total_votes %> votes</span>
-      <% if logged_in? %>
-        <br/>
-        <%= link_to vote_post_path(post, vote: false), method: 'post', remote: true do %>
-          <i class='icon-arrow-down'></i>
-        <% end %>
+      <br/>
+    <% end %>
+    <span id="post_<%= post.slug %>_votes"><%= post.total_votes %> votes</span>
+    <% if logged_in? %>
+      <br/>
+      <%= link_to vote_post_path(post, vote: false), method: 'post', remote: true do %>
+        <i class='icon-arrow-down'></i>
       <% end %>
-    </div>
-    <div class="post">
-        <%= render post.categories %>
-      <div class="post-info">
-        <h4><%= post.title %></h4>
-        <p><em><%= post.description %></em></p>
-        <br/>
-        <p class='pull-right'>
-        <span class="quiet">posted by </span> <%= link_to post.creator.user_name, user_path(post.creator) %>
-        <small>at <%= display_datetime(post.created_at) %></small>
-        </p>
-        <span>
-          <%= link_to("#{post.comments.size} comments", post_path(post), class: 'pull-left') %>
-        </span>
-      </div>
+    <% end %>
+  </div>
+  <div class="post cf">
+      <%= render post.categories %>
+    <div class="post-info">
+      <h4><%= post.title %></h4>
+      <p><em><%= post.description %></em></p>
+      <br/>
+      <p class='posted-info'>
+      <span class="quiet">posted by </span> <%= link_to post.creator.user_name, user_path(post.creator) %>
+      <small>at <%= display_datetime(post.created_at) %></small>
+      </p>
+      <span>
+        <%= link_to("#{post.comments.size} comments", post_path(post), class: 'pull-left') %>
+      </span>
     </div>
   </div>
 </div>

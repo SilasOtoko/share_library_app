@@ -1,39 +1,41 @@
 #posts-header{
-  display: inline-block;
-  float: left;
+  display: block;
   margin-bottom: 20px;
 }
 
 #new-post{
   display: inline-block;
-  float: right;
   margin: 40px 0;
 }
 
 .post-section{
   clear: both;
-  margin: 20px 0;
+  width: 100%;
+  margin: 20px auto;
+  text-align: left;
 }
 
 .vote-box{
+  width: 10%;
+  max-width: 50px;
   display: inline-block;
   background-color: #f9f9f9;
-  padding: 10px 20px;
+  padding: 10px 8px;
   border-radius: 10px;
   border: 2px solid #333;
-  float: left;
   font-family: 'Source Sans Pro', sans-serif;
+  margin-right: 2%;
 }
 
 .post,
 .comments{
   display: inline-block;
-  width: 80%;
   background-color: #f9f9f9;
   border: 2px solid #333;
   border-radius: 10px;
   float: right;
   padding: 20px;
+  width: 60%;
 }
 
 .category-icon{
@@ -107,14 +109,64 @@
 
 .show-post{
   display: inline-block;
-  width: 100%;
+  width: 80%;
   background-color: #f9f9f9;
   border: 2px solid #333;
   border-radius: 10px;
   padding: 20px;
   margin-bottom: 20px;
+  text-align: left;
 }
 
 #leave-comment{
   margin: 20px 0;
+}
+
+@media screen and (min-width: 480px){
+  .post,
+  .comments{
+    width: 70%;
+  }
+}
+
+@media screen and (min-width: 640px){
+  #posts-header{
+    display: inline-block;
+  }
+
+  .new-post{
+    float: right;
+  }
+}
+
+@media screen and (min-width: 680px){
+  .post,
+  .comments{
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: 1140px){
+  .vote-box{
+    display: inline-block;
+    background-color: #f9f9f9;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 2px solid #333;
+    float: left;
+    font-family: 'Source Sans Pro', sans-serif;
+    margin-right: 5%;
+  }
+
+  .post-section{
+    float: right;
+  }
+
+  #post-header{
+    float: left;
+  }
+
+  .posted-info{
+    float: right;
+  }
 }
