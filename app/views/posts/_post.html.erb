@@ -29,7 +29,7 @@
       <% end %>
       <p><em><%= post.description %></em></p>
       <br/>
-      <p>"<%= post.review %>"</p>
+      <p><%= post.review %></p>
       <br/>
       <p class='posted-info'>
       <span class="quiet">posted by </span> <%= link_to post.creator.user_name, user_path(post.creator) %>
