@@ -27,6 +27,14 @@
   margin-right: 2%;
 }
 
+.up-votes{
+  color: green;
+}
+
+.down-votes{
+  color: red;
+}
+
 .post,
 .comments{
   display: inline-block;
