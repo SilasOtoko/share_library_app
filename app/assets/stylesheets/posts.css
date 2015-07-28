@@ -16,23 +16,24 @@
 }
 
 .vote-box{
-  width: 10%;
-  max-width: 50px;
+  width: 30px;
   display: inline-block;
-  background-color: #f9f9f9;
-  padding: 10px 8px;
   border-radius: 10px;
   border: 2px solid #333;
+  background-color: #f9f9f9;
   font-family: 'Source Sans Pro', sans-serif;
-  margin-right: 2%;
+  margin: 0 5px 5px 0;
 }
 
-.up-votes{
-  color: green;
+
+.up-votes a,
+.down-votes a{
+  color: #333;
 }
 
-.down-votes{
-  color: red;
+.up-votes a:hover,
+.down-votes a:hover{
+  text-decoration: none;
 }
 
 .post,
@@ -41,9 +42,8 @@
   background-color: #f9f9f9;
   border: 2px solid #333;
   border-radius: 10px;
-  float: right;
   padding: 20px;
-  width: 60%;
+  width: 92%;
 }
 
 .post-title{
@@ -92,8 +92,8 @@
 
 .post-info{
   display: inline-block;
-  margin-left: 20px;
-  width: 80%;
+  margin: 0 auto;
+  width: 100%;
   font-family: 'Source Sans Pro', sans-serif;
 }
 
@@ -152,11 +152,11 @@
   margin: 20px 0;
 }
 
+footer{
+  clear: both;
+}
+
 @media screen and (min-width: 480px){
-  .post,
-  .comments{
-    width: 70%;
-  }
 }
 
 @media screen and (min-width: 640px){
@@ -174,18 +174,24 @@
   .comments{
     width: 80%;
   }
+
+  #voting{
+    display: inline-block;
+  }
+
+  .post{
+    float: right;
+  }
+
+  .post-info{
+    width: 80%;
+  }
 }
 
 @media screen and (min-width: 1140px){
   .vote-box{
-    display: inline-block;
-    background-color: #f9f9f9;
-    padding: 10px 20px;
-    border-radius: 10px;
-    border: 2px solid #333;
+    display: block;
     float: left;
-    font-family: 'Source Sans Pro', sans-serif;
-    margin-right: 5%;
   }
 
   .post-section{

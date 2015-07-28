@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150728042054) do
+ActiveRecord::Schema.define(version: 20150728195013) do
 
   create_table "categories", force: true do |t|
     t.string "name"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20150728042054) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "slug"
+    t.text     "review"
   end
 
   create_table "users", force: true do |t|
