@@ -38,6 +38,28 @@
   width: 60%;
 }
 
+.post-title{
+  display: inline-block;
+}
+
+.post-title a{
+  color: #333;
+}
+
+.post-title a:hover{
+  text-decoration: none;
+  color: #ccc;
+}
+
+.edit-link,
+.destroy-link{
+  float: right;
+}
+
+.destroy-link{
+  margin-left: 10px;
+}
+
 .category-icon{
   height: 50px;
   width: 50px;

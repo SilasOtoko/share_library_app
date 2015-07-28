@@ -9,7 +9,7 @@ class Post < ActiveRecord::Base
   has_many :post_categories
   has_many :categories, through: :post_categories
 
-  validates :title, presence: true, length: {minimum: 2}
+  validates :title, uniqueness: true, presence: true, length: {minimum: 2}
   validates :description, presence: true
 
   sluggable_column :title

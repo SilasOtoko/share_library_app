@@ -17,7 +17,11 @@
   <div class="post cf">
       <%= render post.categories %>
     <div class="post-info">
-      <h4><%= post.title %></h4>
+      <h4 class='post-title'><%= link_to post.title, post_path(post) %></h4>
+      <% if current_user == post.creator || current_user.admin? %>
+        <p class='destroy-link'>[<%= link_to 'delete', post, method: :delete, data: { confirm: "Are you sure?" } %>]</p>
+        <p class='edit-link'>[<%= link_to 'edit', edit_post_path(post) %>]</p>
+      <% end %>
       <p><em><%= post.description %></em></p>
       <br/>
       <p class='posted-info'>
