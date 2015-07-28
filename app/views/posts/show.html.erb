@@ -2,7 +2,13 @@
   <%= render @post.categories %>
   <div class='post-info'>
     <%= render 'shared/content_title', title: @post.title %>
-    <p><%= @post.description %></p>
+    <p><em><%= @post.description %></em></p>
+    <br/>
+    <p><%= @post.review %></p>
+    <p class='pull-left'>
+      <span class="quiet">posted by </span> <%= link_to @post.creator.user_name, user_path(@post.creator) %>
+      <small>at <%= display_datetime(@post.created_at) %></small>
+    </p>
   </div>
   <% if current_user == @post.creator || current_user.admin? %>  
     <p class='pull-right'>
