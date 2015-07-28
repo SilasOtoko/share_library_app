@@ -12,6 +12,7 @@ class Post < ActiveRecord::Base
   validates :title, uniqueness: true, presence: true, length: {minimum: 2}
   validates :description, presence: true
   validates :review, presence: true
+  validates :post_categories, presence: true
 
   sluggable_column :title
 end
