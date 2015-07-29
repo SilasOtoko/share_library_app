@@ -1,5 +1,6 @@
 <% if @vote.valid? %>
-  $(".post_<%= @post.slug %>_votes").html("+<span class='up-votes'><%= @post.up_votes %></span> / <span class='down-votes'>-<%= @post.down_votes %></span>")
+  $(".post_<%= @post.slug %>_upvotes").html("+<%= post.up_votes %>")
+  $(".post_<%= @post.slug %>_downvotes").html("-<%= post.down_votes %>")
 <% else %>
   alert("You've already voted on this")
 <% end %>

@@ -8,7 +8,7 @@
         <% end %>
         <br/>
       <% end %>
-      <span id="comment_<%= comment.id %>_votes">+<span class="up-votes"><%= comment.up_votes %></span> / <span class='down-votes'>-<%= comment.down_votes %></span></span>
+      <span id="comment_<%= comment.id %>_votes">+<span class="up-votes"><%= comment.up_votes %></span><br/><span class='down-votes'>-<%= comment.down_votes %></span></span>
       <% if logged_in? %>
         <br/>
         <%= link_to vote_post_comment_path(comment.post, comment, vote: false), method: 'post', remote: true do %>

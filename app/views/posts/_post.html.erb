@@ -6,7 +6,7 @@
         <i class='icon-arrow-up'></i>
       <% end %>
       <br/>
-    <span class="post_<%= post.slug %>_votes">+<%= post.up_votes %></span>
+    <span class="post_<%= post.slug %>_upvotes">+<%= post.up_votes %></span>
     <% end %>
   </div>
   <div class='vote-box down-votes text-center'>
@@ -15,7 +15,7 @@
         <i class='icon-arrow-down'></i>
       <% end %>
       <br/>
-      <span class="post_<%= post.slug %>_votes">-<%= post.down_votes %></span>
+      <span class="post_<%= post.slug %>_downvotes">-<%= post.down_votes %></span>
     <% end %>
   </div>
 </div>
