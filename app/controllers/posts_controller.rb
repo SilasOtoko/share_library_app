@@ -5,8 +5,8 @@ class PostsController < ApplicationController
 
   def index
     if logged_in?
-      @posts = Post.limit(Post::PER_PAGE).offset(params[:offset]).order(created_at: :desc)
-      @pages = (Post.all.size.to_f / Post::PER_PAGE).ceil
+      @posts = Post.limit(Post::PER_PAGE).offset(params[:offset]).order(created_at: :desc).where(recommended: true)
+      @pages = (@posts.size.to_f / Post::PER_PAGE).ceil
       @posts_this_month = Post.limit(Post::PER_PAGE).offset(params[:offset]).where(created_at: (Time.now.midnight - 30.day)..Time.now.midnight).order(created_at: :desc)
     else
       render 'home'
