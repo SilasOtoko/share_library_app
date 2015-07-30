@@ -1,6 +1,6 @@
 
 
-<h1 id="posts-header">Recommonded by Others</h1>
+<h1 id="posts-header">Shared by Others</h1>
 <% if logged_in? %>
   <%= link_to 'New Post', new_post_path, class: 'btn btn-success btn-large new-post' %>
 <% end %>
@@ -8,7 +8,6 @@
 <%= render 'layouts/side_bar' %>
 
 <div id="feed">
-
   <% @posts.each do |post| %>
       <%= render 'post', post: post %>
   <% end %>

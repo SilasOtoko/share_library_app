@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 20150730014452) do
     t.datetime "updated_at"
     t.string   "slug"
     t.text     "review"
-    t.boolean  "recommended", default: false
+    t.boolean  "recommended", default: true
   end
 
   create_table "users", force: true do |t|

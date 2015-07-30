@@ -22,9 +22,10 @@
     </div>
     <br/>
     <div class='control-group'>
-      <%= f.label :recommended, 'Would you like to recommed this to others?' %>
-      <%= f.check_box :recommended do |cb| %>
-        <% cb.label(class: "checkbox inline"){cb.check_box + 'Recommend'} %>
+      <%= f.label :recommended, "Share to main feed" %>
+      <%= f.check_box :recommended, :checked => true do |cb| %>
+        <% cb.label(class: "checkbox"){cb.check_box + 'Recommend'} %>
+
       <% end %>
     </div>
     <br/>
