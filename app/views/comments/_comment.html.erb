@@ -6,11 +6,11 @@
         <%= link_to vote_post_comment_path(comment.post, comment, vote: true), method: 'post', remote: true, class: 'vote-link' do %>
           <i class='icon-arrow-up'></i>
           <br/>
-          <span id="comment_<%= comment.id %>_upvotes">+<span class="up-votes"><%= comment.up_votes %></span>
+          <span class="comment_<%= comment.id %>_upvotes">+<span class="up-votes"><%= comment.up_votes %></span>
         <% end %>
       <% else %>
         <br/>
-        <span id="comment_<%= comment.id %>_upvotes">+<span class="up-votes"><%= comment.up_votes %></span>
+        <span class="comment_<%= comment.id %>_upvotes">+<span class="up-votes"><%= comment.up_votes %></span>
       <% end %>
     </div>
     <div class='vote-box down_votes text-center'>
@@ -18,11 +18,11 @@
         <%= link_to vote_post_comment_path(comment.post, comment, vote: false), method: 'post', remote: true, class: 'vote-link' do %>
           <i class='icon-arrow-down'></i>
           <br/>
-          <span id="comment_<%= comment.id %>_upvotes">-<span class='down-votes'><%= comment.down_votes %></span></span>
+          <span class="comment_<%= comment.id %>_downvotes">-<span class='down-votes'><%= comment.down_votes %></span></span>
         <% end %>
       <% else %>
       <br/>
-      <span id="comment_<%= comment.id %>_upvotes">-<span class='down-votes'><%= comment.down_votes %></span></span>
+      <span class="comment_<%= comment.id %>_downvotes">-<span class='down-votes'><%= comment.down_votes %></span></span>
       <% end %>
     </div>
     <div class="comments cf">

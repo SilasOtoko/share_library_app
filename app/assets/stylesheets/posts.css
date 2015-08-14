@@ -26,7 +26,10 @@
 }
 
 .vote-link,
-.vote-link:hover{
+.vote-link:visited,
+.vote-link:hover,
+.vote-link:active,
+.vote-link:focus{
   color: #333;
   text-decoration: none;
 }

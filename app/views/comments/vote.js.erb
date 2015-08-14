@@ -1,5 +1,6 @@
 <% if @vote.valid? %>
-  $("#comment_<%= @comment.id %>_votes").html("+<span class='up-votes'><%= @comment.up_votes %></span> / <span class='down-votes'>-<%= @comment.down_votes %></span>")
+  $(".comment_<%= @comment.id %>_upvotes").html("+<%= @comment.up_votes %>")
+  $(".comment_<%= @comment.id %>_downvotes").html("-<%= @comment.down_votes %>")
 <% else %>
   alert("You've already voted on this")
 <% end %>
