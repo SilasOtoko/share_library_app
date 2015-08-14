@@ -25,6 +25,11 @@
   margin: 0 5px 5px 0;
 }
 
+.vote-link,
+.vote-link:hover{
+  color: #333;
+  text-decoration: none;
+}
 
 .up-votes a,
 .down-votes a{

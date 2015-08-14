@@ -15,4 +15,10 @@ class Post < ActiveRecord::Base
   validates :categories, presence: true
 
   sluggable_column :title
+
+  
+
+  # def main_category
+  #   post.
+  # end
 end
