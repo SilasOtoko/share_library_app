@@ -20,7 +20,7 @@
   </div>
 </div>
   <div class="post cf">
-      <%= render post.categories %>
+      <%= render post.category %>
     <div class="post-info">
       <h4 class='post-title'><%= link_to post.title, post_path(post) %></h4>
       <% if current_user == post.creator || current_user.admin? %>

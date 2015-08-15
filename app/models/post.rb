@@ -6,13 +6,13 @@ class Post < ActiveRecord::Base
 
   belongs_to :creator, foreign_key: 'user_id', class_name: 'User'
   has_many :comments
-  has_many :post_categories
-  has_many :categories, through: :post_categories
+  has_one :post_category
+  has_one :category, through: :post_category
 
   validates :title, uniqueness: true, presence: true, length: {minimum: 2}
   validates :description, presence: true
   validates :review, presence: true
-  validates :categories, presence: true
+  validates :category, presence: true
 
   sluggable_column :title
 end

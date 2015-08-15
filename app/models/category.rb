@@ -1,7 +1,7 @@
 class Category < ActiveRecord::Base
   include Sluggable
 
-  has_many :post_categories
+  has_one :post_category
   has_many :posts, through: :post_categories
   
   sluggable_column :name
