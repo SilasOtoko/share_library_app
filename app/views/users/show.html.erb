@@ -51,37 +51,37 @@
   <% end %>
 <% elsif params[:tab] == 'books' %>
   <% @user.posts.each do |post| %>
-    <% if post.post_categories.first.category_id == 1 %>
+    <% if post.post_categories.first.category.name == 'Books' %>
       <%= render 'posts/post', post: post %>
     <% end %>
   <% end %>
 <% elsif params[:tab] == 'movies' %>
   <% @user.posts.each do |post| %>
-    <% if post.post_categories.first.category_id == 2 %>
+    <% if post.post_categories.first.category.name == 'Movies' %>
       <%= render 'posts/post', post: post %>
     <% end %>
   <% end %>
 <% elsif params[:tab] == 'shows' %>
   <% @user.posts.each do |post| %>
-    <% if post.post_categories.first.category_id == 3 %>
+    <% if post.post_categories.first.category.name == 'Shows' %>
       <%= render 'posts/post', post: post %>
     <% end %>
   <% end %>
 <% elsif params[:tab] == 'games' %>
   <% @user.posts.each do |post| %>
-    <% if post.post_categories.first.category_id == 4 %>
+    <% if post.post_categories.first.category.name == 'Games' %>
       <%= render 'posts/post', post: post %>
     <% end %>
   <% end %>
 <% elsif params[:tab] == 'food' %>
   <% @user.posts.each do |post| %>
-    <% if post.post_categories.first.category_id == 5 %>
+    <% if post.post_categories.first.category.name == 'Food' %>
       <%= render 'posts/post', post: post %>
     <% end %>
   <% end %>
 <% elsif params[:tab] == 'music' %>
   <% @user.posts.each do |post| %>
-    <% if post.post_categories.first.category_id == 6 %>
+    <% if post.post_categories.first.category.name == 'Music' %>
       <%= render 'posts/post', post: post %>
     <% end %>
   <% end %>
