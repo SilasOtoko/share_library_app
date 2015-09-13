@@ -22,6 +22,21 @@
     <% if category.name == 'Books' %>
       <li class='<%= 'active' if params[:tab] == 'books' %>'>
         <%= link_to "Books", user_path(tab: "books") %>
+    <% elsif category.name == 'Movies' %>
+      <li class='<%= 'active' if params[:tab] == 'movies' %>'>
+        <%= link_to "Movies", user_path(tab: "movies") %>
+    <% elsif category.name == 'Shows' %>
+      <li class='<%= 'active' if params[:tab] == 'shows' %>'>
+        <%= link_to "Shows", user_path(tab: "shows") %>
+    <% elsif category.name == 'Games' %>
+      <li class='<%= 'active' if params[:tab] == 'games' %>'>
+        <%= link_to "Games", user_path(tab: "games") %>
+    <% elsif category.name == 'Food' %>
+      <li class='<%= 'active' if params[:tab] == 'food' %>'>
+        <%= link_to "Food", user_path(tab: "food") %>
+    <% elsif category.name == 'Music' %>
+      <li class='<%= 'active' if params[:tab] == 'music' %>'>
+        <%= link_to "Music", user_path(tab: "music") %>
     <% end %>
   <% end %>
 </ul>
@@ -33,5 +48,41 @@
 <% elsif params[:tab] == 'comments' %>
   <% @user.comments.each do |comment| %>
     <%= render 'comments/comment', comment: comment, show_post: true %>
+  <% end %>
+<% elsif params[:tab] == 'books' %>
+  <% @user.posts.each do |post| %>
+    <% if post.post_categories.first.category_id == 1 %>
+      <%= render 'posts/post', post: post %>
+    <% end %>
+  <% end %>
+<% elsif params[:tab] == 'movies' %>
+  <% @user.posts.each do |post| %>
+    <% if post.post_categories.first.category_id == 2 %>
+      <%= render 'posts/post', post: post %>
+    <% end %>
+  <% end %>
+<% elsif params[:tab] == 'shows' %>
+  <% @user.posts.each do |post| %>
+    <% if post.post_categories.first.category_id == 3 %>
+      <%= render 'posts/post', post: post %>
+    <% end %>
+  <% end %>
+<% elsif params[:tab] == 'games' %>
+  <% @user.posts.each do |post| %>
+    <% if post.post_categories.first.category_id == 4 %>
+      <%= render 'posts/post', post: post %>
+    <% end %>
+  <% end %>
+<% elsif params[:tab] == 'food' %>
+  <% @user.posts.each do |post| %>
+    <% if post.post_categories.first.category_id == 5 %>
+      <%= render 'posts/post', post: post %>
+    <% end %>
+  <% end %>
+<% elsif params[:tab] == 'music' %>
+  <% @user.posts.each do |post| %>
+    <% if post.post_categories.first.category_id == 6 %>
+      <%= render 'posts/post', post: post %>
+    <% end %>
   <% end %>
 <% end %>
